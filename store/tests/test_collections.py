@@ -7,7 +7,7 @@ from store.models import Collection
 @pytest.fixture
 def create_collection(api_client):
   def do_create_collection(collection):
-    return api_client.post('/collections/',collection)
+    return api_client.post('/store/collections/',collection)
   return do_create_collection
  
 @pytest.mark.django_db
@@ -44,7 +44,7 @@ class TestRetrieveCollection:
    def test_if_collection_exists_returns_200(self, api_client):
      
       collection = baker.make(Collection)
-      response = api_client.get(f'/collections/{collection.id}/')
+      response = api_client.get(f'/store/collections/{collection.id}/')
       
       assert response.status_code == status.HTTP_200_OK
       assert response.data == {
