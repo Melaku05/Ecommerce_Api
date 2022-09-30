@@ -7,7 +7,7 @@ import requests
 
 
 class SayHelloView(APIView):
-    @method_decorator(cache_page(5*60))
+    # @method_decorator(cache_page(5*60))
     def get(self, request):
         response = requests.get('https://httpbin.org/delay/2')
         data = response.json()
