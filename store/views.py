@@ -21,7 +21,7 @@ class ProductViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = ProductFilter
     pagination_class = DefaultPagination
-    permission_classes = [IsAdminOrReadOnly]
+    permission_classes = [AllowAny]
     search_fields = ['title', 'description']
     ordering_fields = ['unit_price', 'last_update']
 

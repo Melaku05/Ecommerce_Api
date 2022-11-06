@@ -11,11 +11,10 @@ SECRET_KEY = 'django-insecure-@n$84&@3o#z#%_*%+p$c+9xg2!9cjd!9#yqqpq=$q^12td(^ji
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'storefront3',
-        'USER': 'root',
-        'PASSWORD': 'password',
+        'USER': 'm',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '3306',
     }
 }

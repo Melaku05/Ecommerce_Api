@@ -12,7 +12,7 @@ class CollectionSerializer(serializers.ModelSerializer):
 
     products_count = serializers.IntegerField(read_only=True)
 
-class ProductImageSerializer(serializers.ModelSerializer):
+class ProductImageSerializer(serializers.HyperlinkedModelSerializer):
     def create(self, validated_data):
         porduct_id = self.context['product_id']
         return ProductImage.objects.create(product_id=porduct_id, **validated_data)

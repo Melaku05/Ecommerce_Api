@@ -26,7 +26,7 @@ class ProductImageInline(admin.TabularInline):
 
     def thumbnail(self, instance):
         if instance.image.name != '':
-            return format_html(f'<img src="{instance.image.url}" class="thumbnail" />')
+            return format_html(f'<img src="{instance.image.url} " class="thumbnail" />')
         return ''
 
 
@@ -66,7 +66,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     class Media:
         css = {
-            'all': ['store/styles.css']
+            'all': ["/store/style.css"]
         }
 
 
